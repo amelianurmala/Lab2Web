@@ -329,6 +329,19 @@ Aturan ID selector lebih spesifik daripada Class selector. Jadi kalau ada konfli
 
 
 
+## Laporan Pratikum
+<img width="1366" height="768" alt="Screenshot (317)" src="https://github.com/user-attachments/assets/c11bc5b3-995c-4df3-919c-bd374767e872" />
+
+<img width="1366" height="768" alt="Screenshot (302)" src="https://github.com/user-attachments/assets/5e9d829c-3624-49fa-a671-93f7c4b51b40" />
+
+<img width="1366" height="768" alt="Screenshot (303)" src="https://github.com/user-attachments/assets/8a12a684-93ca-4bb6-974c-412006de5609" />
+
+<img width="1366" height="768" alt="Screenshot (319)" src="https://github.com/user-attachments/assets/9074d7f3-3139-4356-b328-1b4d7923f8e9" />
+
+<img width="1366" height="768" alt="Screenshot (320)" src="https://github.com/user-attachments/assets/cfcc1449-ed2a-467d-ba21-9e2976d2ea24" />
+
+
+
 
 
 
