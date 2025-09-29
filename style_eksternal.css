@@ -1,0 +1,71 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Header */
+header {
+  min-height: 80px;
+  border-bottom: 1px solid #77CCEF;
+}
+h1 {
+  font-size: 24px;
+  color: #0F189F;
+  text-align: center;
+  padding: 20px 10px;
+}
+h1 i {
+  color: #6d6a6b;
+}
+
+/* Nav */
+nav {
+  background: #000000; /* hitam pekat */
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+nav a {
+  color: yellow; /* link jadi kuning */
+  text-decoration: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  font-size: 18px;
+}
+nav .active,
+nav a:hover {
+  background: red; /* hover merah */
+  color: white;
+}
+
+/* ID Selector */
+#intro {
+  background: orange;
+  border: 3px solid black;
+  min-height: 150px;
+  padding: 20px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+#intro h1 {
+  text-align: center;
+  color: blue;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 8px white;
+}
+
+/* Class Selector */
+.button {
+  padding: 10px 20px;       /* kecilin padding */
+  background: purple;
+  color: white;
+  font-size: 16px;          /* font lebih kecil */
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;         /* kasih jarak dari paragraf */
+}
+.btn-primary {
+  background: green;
+  border: 2px solid yellow;
+}
