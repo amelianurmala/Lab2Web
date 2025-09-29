@@ -10,8 +10,7 @@
 ## Praktikum 2: CSS Dasar
 
 
-### 1. Lakukan eksperimen dengan mengubah dan menambah properti dan nilai pada kode CSS
-dengan mengacu pada CSS Cheat Sheet yang diberikan pada file terpisah dari modul ini.
+### 1. Lakukan eksperimen dengan mengubah dan menambah properti dan nilai pada kode CSS dengan mengacu pada CSS Cheat Sheet yang diberikan pada file terpisah dari modul ini.
 
 Jawab: 
 #### Kode CSS Materi Sebelum Perubahan 
@@ -147,7 +146,7 @@ Penjelasan:
 Tampilan setelah modifikasi:
 - Navbar berubah jadi hitam, link kuning, hover merah.
 - Section intro berubah jadi oranye dengan border hitam dan efek shadow.
-- Heading <h1> di dalam intro lebih besar (40px), berwarna biru, uppercase, dengan efek shadow putih.
+- Heading `<h1>` di dalam intro lebih besar (40px), berwarna biru, uppercase, dengan efek shadow putih.
 - Tombol berubah jadi ungu (class .button) dan hijau (class .btn-primary) dengan border kuning.
 
 hasil tampilan Modifikasi:
@@ -156,8 +155,10 @@ hasil tampilan Modifikasi:
 Kesimpulan:
 - Sebelum: sederhana, hanya ada navbar hijau, intro biru, tombol abu-abu/merah.
 - Sesudah: tampilan lebih menarik dengan warna kontras, shadow, dan efek hover
-### 2. Apa perbedaan pendeklarasian CSS elemen h1 {...} dengan #intro h1 {...}? berikan
-penjelasannya!
+
+---
+
+### 2. Apa perbedaan pendeklarasian CSS elemen h1 {...} dengan #intro h1 {...}? berikan penjelasannya!
 
 Jawab :
 
@@ -180,8 +181,6 @@ A. **`h1 { ... }`**
      </header>
      ```
      ➝ Semua `<h1>` termasuk yang ada di dalam `<header>` akan tampil biru (#0F189F), ukuran 24px, dan rata tengah.
-
----
 
 B. **`#intro h1 { ... }`**
    - Disebut **ID selector yang lebih spesifik**.
@@ -206,17 +205,16 @@ B. **`#intro h1 { ... }`**
      ```
      ➝ Hanya `<h1>` di dalam `<div id="intro">` yang tampil biru tua, huruf kapital, lebih besar (40px), dan ada efek bayangan.
 
----
+
 
 #### Kesimpulan
 - `h1 { ... }` = berlaku global untuk semua heading `<h1>` di halaman.  
 - `#intro h1 { ... }` = berlaku spesifik hanya untuk `<h1>` di dalam `#intro`.  
 - Jika keduanya ada, maka aturan yang lebih spesifik (`#intro h1`) **akan menang**.
 
+---
 
-### 3. Apabila ada deklarasi CSS secara internal, lalu ditambahkan CSS eksternal dan inline CSS pada
-elemen yang sama. Deklarasi manakah yang akan ditampilkan pada browser? Berikan
-penjelasan dan contohnya!
+### 3. Apabila ada deklarasi CSS secara internal, lalu ditambahkan CSS eksternal dan inline CSS pada elemen yang sama. Deklarasi manakah yang akan ditampilkan pada browser? Berikan penjelasan dan contohnya!
 
 Jawab:
 
@@ -246,8 +244,6 @@ A. **Class Selector (`.namaClass`)**
      <a class="button btn-primary" href="#intro">Informasi selengkapnya.</a>
      ```
      ➝ Elemen `<a>` tersebut akan mendapat style dari **kedua class**: `.button` dan `.btn-primary`.
-
----
 
 B. **ID Selector (`#namaID`)**
    - Ditulis dengan tanda pagar (`#`).
@@ -280,53 +276,58 @@ B. **ID Selector (`#namaID`)**
      ```
      ➝ Hanya elemen `<div>` dengan `id="intro"` (dan `<h1>` di dalamnya) yang terpengaruh aturan ini.
 
----
-
 ### Kesimpulan
 - **Class (`.button`, `.btn-primary`)** → digunakan untuk banyak elemen, bisa dipakai berulang kali.  
 - **ID (`#intro`)** → hanya untuk satu elemen unik di dalam halaman.  
 - Dalam kode saya, `.button` dan `.btn-primary` dipakai untuk tombol/link, sedangkan `#intro` dipakai untuk mengatur section khusus.
+  
+---
 
-### 4. Pada sebuah elemen HTML terdapat ID dan Class, apabila masing-masing selector tersebut
-terdapat deklarasi CSS, maka deklarasi manakah yang akan ditampilkan pada browser?
-Berikan penjelasan dan contohnya! ( <p id="paragraf-1" class="text-paragraf">
+### 4. Pada sebuah elemen HTML terdapat ID dan Class, apabila masing-masing selector tersebut terdapat deklarasi CSS, maka deklarasi manakah yang akan ditampilkan pada browser? Berikan penjelasan dan contohnya! ( <p id="paragraf-1" class="text-paragraf">
+
+Jawab: 
+
+Kalau sebuah elemen HTML punya **ID** dan **Class** sekaligus, maka aturan yang dipakai browser ditentukan oleh **spesifisitas (specificity)**.  
+Urutannya seperti ini:
+1. **Inline CSS** → paling kuat.  
+2. **ID Selector (`#id`)** → lebih spesifik daripada class.  
+3. **Class Selector (`.class`)** → lebih spesifik daripada selector elemen biasa.  
+4. **Selector Elemen (`p`, `h1`, dll)** → paling lemah.  
+
+Jadi, kalau ID dan Class sama-sama mengatur properti yang sama, maka **aturan ID akan menang**.  
+Tapi kalau ID dan Class mengatur properti yang berbeda, maka **keduanya berlaku**.
+
+#### Contoh dari kode saya 
+HTML:
+```html
+<p id="paragraf-1" class="text-paragraf">
+  Ini adalah paragraf percobaan.
+</p>
+
 
 Contoh elemen:  
 ```html
 <p id="paragraf-1" class="text-paragraf">Ini adalah paragraf percobaan.</p>
 ```
-
-Jawab: 
-
-Browser menentukan aturan CSS yang dipakai berdasarkan specificity (tingkat kekuatan selector).
-Urutan prioritasnya adalah:
-- Inline style (style langsung di elemen) → paling kuat.
-- ID selector (#id) → lebih spesifik dibanding class.
-- Class selector (.class), attribute selector, pseudo-class (:hover, :first-child).
-- Tag/elemen selector (p, h1, dll).
-
-Jadi, jika ID dan Class mendeklarasikan properti yang sama, maka aturan ID akan menang.
-Jika deklarasinya berbeda, maka keduanya dipakai.
-
-Contoh HTML:
- ```
-<p id="paragraf-1" class="text-paragraf">
-  Ini adalah paragraf percobaan.
-</p>
- ```
-Contoh CSS:
- ```
+CSS:
+```CSS
 .text-paragraf {
-  color: blue;
-  font-size: 16px;
+  color: blue;        /* Class → teks biru */
+  font-size: 16px;    /* Class → ukuran font */
 }
+
 #paragraf-1 {
-  color: red;
+  color: red;         /* ID → teks merah */
 }
- ```
-Hasil di Browser
-- Warna teks: merah (karena ID #paragraf-1 lebih spesifik, menimpa aturan class).
-- Ukuran font: 16px (tetap diambil dari class, karena ID tidak mendeklarasikan ukuran font).
+```
+Hasil di browser:
+- Warna teks akan merah (aturan ID lebih kuat).
+- Ukuran font tetap 16px (karena hanya class yang mengaturnya).
+
+Kesimpulan
+Aturan ID selector lebih spesifik daripada Class selector. Jadi kalau ada konflik, ID yang ditampilkan di browser, sedangkan aturan dari class tetap berlaku untuk properti lain yang tidak diatur oleh ID.
+
+
 
 
 
